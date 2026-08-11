@@ -1,0 +1,27 @@
+[package]
+name = "rusty_alloc_default"
+version = "0.1.0"
+authors = ["Remade With Rust / Mata Network"]
+description = "Installs rusty_alloc as the process #[global_allocator] — shared default for Remade UI crates (Remade With Rust)"
+repository = "https://github.com/Remade-With-Rust/rusty_alloc_default"
+documentation = "https://docs.rs/rusty_alloc_default"
+homepage = "https://github.com/Remade-With-Rust/rusty_alloc_default"
+license = "MIT"
+keywords = ["allocator", "rusty_alloc", "mimalloc", "wasm", "no-std"]
+categories = ["memory-management", "no-std"]
+readme = "README.md"
+edition = "2021"
+rust-version = "1.73"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
+
+[features]
+default = []
+# Guard pages + encrypted free lists (~4-7% instructions, measured upstream).
+secure = ["rusty_alloc-api/secure"]
+
+[dependencies]
+# Pin exactly: rusty_alloc is 0.x and earlier releases had UAFs on all targets.
+rusty_alloc-api = { version = "=0.4.0" }
