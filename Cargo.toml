@@ -24,4 +24,4 @@ secure = ["rusty_alloc-api/secure"]
 
 [dependencies]
 # Pin exactly: rusty_alloc is 0.x and earlier releases had UAFs on all targets.
-rusty_alloc-api = { version = "=0.4.0" }
+rusty_alloc-api = { version = "=1.1.4" }
