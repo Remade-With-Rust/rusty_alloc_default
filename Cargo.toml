@@ -12,6 +12,17 @@ categories = ["memory-management", "no-std"]
 readme = "README.md"
 edition = "2021"
 rust-version = "1.73"
+# This crate declares the `#[global_allocator]`, and a program may define exactly
+# one. Cargo permits at most one package per `links` value in a dependency graph,
+# so claiming a value here turns "two allocators reached the same build" into a
+# RESOLVE-time error that names both packages -- instead of the multiple-symbol
+# link error you get today, at the end of a long build, saying nothing about
+# where either came from.
+#
+# The value is shared deliberately with the per-workspace seams (rzstd-alloc, and
+# the others as they adopt it), because they are alternatives to this crate, not
+# companions: a build wants one or the other, never both.
+links = "rusty_alloc_global"
 
 [package.metadata.docs.rs]
 all-features = true
