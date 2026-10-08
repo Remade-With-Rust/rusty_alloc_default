@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [0.1.3](https://github.com/Remade-With-Rust/rusty_alloc_default/compare/v0.1.2...v0.1.3) - 2026-10-08
+
+### Other
+
+- bump rusty_alloc-api to =2.2.5 ([#10](https://github.com/Remade-With-Rust/rusty_alloc_default/pull/10))
+- 369 active installs
+- 282 active installs
+- 157 active installs
+
 ## [0.1.2](https://github.com/Remade-With-Rust/rusty_alloc_default/compare/v0.1.1...v0.1.2) - 2026-08-28
 
 ### Other
